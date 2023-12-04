@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* cursor: none; */
+}
+
+.headerPadding {
+  /* padding 0: 24.00px → 64.00px */
+  --pad: clamp(1.5rem, calc(0.31rem + 5.76vw), 4rem);
+  /* Step 0: 46.00px → 64.00px */
+  --pad2: clamp(2.88rem, calc(2.36rem + 2.56vw), 4rem);
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+}
+
+/* Font classes */
+/* Title */
+.font-Audiowide {
+  font-family: var(--Font-audiowide);
+  font-weight: 400;
+}
+
+.title {
+  /* title: 20.00px → 96.00px */
+  --title: clamp(1.125rem, -0.3166rem + 5.4918vw, 5.3125rem);
+  font-size: var(--title);
+}
+
+.body {
+  /* body: 12.00px → 24.00px :: 440px */
+  --body: clamp(0.75rem, 0.622rem + 0.4878vw, 1rem);
+  font-size: var(--body);
+
+  /* tracking: 5.00px → 10.00px */
+  --tracking: clamp(0rem, -0.1601rem + 0.6098vw, 0.3125rem);
+
+  letter-spacing: var(--tracking);
+}
+
+/* ProgressBar */
+progress {
+  /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+}
+progress::-webkit-progress-bar {
+  @apply bg-neutral-600/30 transition-all duration-300;
+}
+progress::-webkit-progress-value {
+  @apply bg-neutral-900 transition-all duration-300 dark:bg-neutral-200;
+}
+progress::-moz-progress-bar {
+  /* style rules */
+}
