@@ -15,12 +15,12 @@ export default function Footer({}: Props) {
         alt={'moon landing'}
         width={3000}
         height={3000}
-        className='h-full w-full object-cover'
+        className='h-full max-h-[600px] w-full object-cover'
       />
       <div className='headerPadding flex w-screen flex-col items-center justify-center gap-y-4 bg-neutral-900 py-4 text-neutral-100'>
         <motion.div
-          className='xs:text-sm mx-auto flex h-full w-full max-w-[2000px] items-center justify-between gap-x-12 
-text-xs '
+          className='mx-auto flex h-full w-full max-w-[2000px] items-center justify-between gap-x-12 text-xs 
+xs:text-sm '
         >
           <motion.div
             initial={{ x: -40, opacity: 0 }}
