@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${aw.variable} scrollbar-thumb-rounded-full overflow-y-hidden bg-neutral-950 text-neutral-50 scrollbar-thin scrollbar-track-neutral-900 scrollbar-thumb-neutral-200/40`}
+      className={`${aw.variable} scrollbar-thumb-rounded-full overflow-y-hidden bg-neutral-950 text-neutral-50 scrollbar-thin scrollbar-track-neutral-900 scrollbar-thumb-neutral-400 `}
     >
       <head>
         {/* <!-- HTML Meta Tags --> */}

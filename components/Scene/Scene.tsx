@@ -25,7 +25,6 @@ import { Perf } from 'r3f-perf';
 import Image, { StaticImageData } from 'next/image';
 import Earth from './Earth';
 import gsap from 'gsap';
-import Loader2 from '../Loader/Loader2';
 import {
   MotionValue,
   motion,
@@ -82,11 +81,16 @@ export default function Scene({}: Props) {
   });
 
   const handleWindowSizeChange = () => {
+    console.log('Inside:', cameraZ);
     setMobile(window.innerWidth < 500);
-    if (window.innerWidth < 500) {
-      setCameraZ({ a: 25, b: 30 });
-    } else {
+    if (window.innerWidth > 1025) {
       setCameraZ({ a: 10, b: 15 });
+    } else if (window.innerWidth > 800) {
+      setCameraZ({ a: 13, b: 18 });
+    } else if (window.innerWidth > 540) {
+      setCameraZ({ a: 18, b: 23 });
+    } else {
+      setCameraZ({ a: 25, b: 30 });
     }
   };
   const { scrollY, scrollYProgress } = useScroll();
@@ -95,7 +99,7 @@ export default function Scene({}: Props) {
   const intesity1 = useTransform(smoothedProgress, [0, 0.3], [0, 0.5]);
   const intesity2 = useTransform(smoothedProgress, [0, 0.3], [0.8, 1]);
   const Y = useTransform(smoothedProgress, [0, 1], [0, 15]);
-  const rotation2 = useTransform(smoothedProgress, [0, 1], [0, Math.PI * 5]);
+  const rotation2 = useTransform(smoothedProgress, [0, 1], [0, Math.PI * 7]);
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
     if (
       (scrollY.get() > 100 && scrollY.get() < 300) ||
@@ -130,6 +134,7 @@ export default function Scene({}: Props) {
       imageGroup2.current.position.set(3, -latest * 2.9, 3);
   });
   useEffect(() => {
+    handleWindowSizeChange();
     window.addEventListener('resize', handleWindowSizeChange);
     return () => {
       window.removeEventListener('resize', handleWindowSizeChange);
@@ -171,8 +176,7 @@ export default function Scene({}: Props) {
             ></Bloom>
           </EffectComposer>
         )}
-        <Suspense fallback={<Loader2 Total={14} />}>
-          {/* <Loader2 Total={5} /> */}
+        <Suspense fallback={null}>
           <group ref={earth}>
             <Earth />
           </group>

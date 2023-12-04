@@ -57,13 +57,15 @@ body {
 /* ProgressBar */
 progress {
   /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); */
+  @apply bg-neutral-600/30 transition-all duration-300;
 }
 progress::-webkit-progress-bar {
   @apply bg-neutral-600/30 transition-all duration-300;
 }
 progress::-webkit-progress-value {
-  @apply bg-neutral-900 transition-all duration-300 dark:bg-neutral-200;
+  @apply bg-neutral-200 transition-all duration-300;
 }
 progress::-moz-progress-bar {
   /* style rules */
+  @apply bg-neutral-600/30 transition-all duration-300;
 }

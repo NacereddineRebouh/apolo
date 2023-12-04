@@ -43,7 +43,7 @@ export default function Earth({}: Props) {
         ease: 'expo.out',
       });
       gsap.to(earth.current.rotation, {
-        y: earth.current.rotation.y + Math.PI * 2,
+        y: earth.current.rotation.y + Math.PI * 3,
         duration: 2.5,
         ease: 'expo.out',
       });

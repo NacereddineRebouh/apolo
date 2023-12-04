@@ -8,7 +8,7 @@ const config: Config = {
   ],
   plugins: [
     // require("prettier-plugin-tailwindcss"),
-    require('tailwind-scrollbar'),
+    require('tailwind-scrollbar')({ nocompatible: true }),
   ],
   theme: {
     screens: {
