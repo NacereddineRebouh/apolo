@@ -15,7 +15,7 @@ export default function Footer({}: Props) {
         alt={'moon landing'}
         width={3000}
         height={3000}
-        className='h-full max-h-[600px] w-full object-cover'
+        className='h-full max-h-[600px] w-full object-cover object-top'
       />
       <div className='headerPadding flex w-screen flex-col items-center justify-center gap-y-4 bg-neutral-900 py-4 text-neutral-100'>
         <motion.div
