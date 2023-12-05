@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${aw.variable} ${lucida.variable} overflow-y-hidden bg-neutral-950 text-neutral-50 scrollbar-thin scrollbar-track-neutral-900 scrollbar-thumb-neutral-400 scrollbar-thumb-rounded-full `}
+      className={`${aw.variable} ${lucida.variable} overflow-y-hidden bg-black text-neutral-50 scrollbar-thin scrollbar-track-neutral-900 scrollbar-thumb-neutral-400 scrollbar-thumb-rounded-full `}
     >
       <head>
         {/* <!-- HTML Meta Tags --> */}

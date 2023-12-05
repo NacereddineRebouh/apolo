@@ -21,7 +21,7 @@ export default function LoadingScreen({}: Props) {
       animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
-      className='fixed top-0 flex h-full w-full select-none flex-col items-center justify-center gap-y-1 bg-neutral-800 text-sm font-thin transition-all duration-300'
+      className='fixed top-0 flex h-full w-full select-none flex-col items-center justify-center gap-y-1 bg-black text-sm font-thin transition-all duration-300'
     >
       <AnimatePresence mode='wait'>
         {percentage < 100 && (
@@ -30,7 +30,7 @@ export default function LoadingScreen({}: Props) {
               animate={{ opacity: 1 }}
               initial={{ opacity: 0 }}
               exit={{ opacity: 0 }}
-              className={`animate-pulse-slow2 flex flex-row gap-x-1`}
+              className={`flex animate-pulse-slow2 flex-row gap-x-1`}
             >
               {percentage}% <span className='font-light'>Loading</span>
             </motion.div>
