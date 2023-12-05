@@ -5,6 +5,7 @@ import LoadingScreen from '@/components/LoadingScreen';
 import Scene from '@/components/Scene/Scene';
 import {
   RootState,
+  getLoaded,
   getPercentage,
   useAppSelector,
 } from '@/utils/Providers/store/store';
@@ -59,7 +60,7 @@ export default function Home() {
       setparagraph3(true);
     }
   });
-  const percentage = useAppSelector(getPercentage);
+  const loaded = useAppSelector(getLoaded);
 
   useEffect(() => {
     const lenis = new Lenis({ smoothTouch: true });
@@ -67,24 +68,20 @@ export default function Home() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-    if (document && percentage >= 100) {
+    if (document && loaded) {
       requestAnimationFrame(raf);
       let classN = document.documentElement.className;
       classN = classN.replaceAll('overflow-y-hidden', 'overflow-y-auto');
       document.documentElement.className = classN;
     }
-  }, [percentage]);
-  // useEffect(() => {
-  //   if (document && percentage >= 100) {
-  //   }
-  // }, [percentage]);
+  }, [loaded]);
 
   return (
     <main
       ref={main}
       className='flex h-full min-h-screen w-full flex-col items-center justify-center p-0'
     >
-      {percentage >= 100 && <Hero />}
+      {loaded && <Hero />}
       <Scene />
 
       {/* Paragraph */}
@@ -184,7 +181,7 @@ export default function Home() {
 
       <Footer />
       <AnimatePresence mode='popLayout'>
-        {percentage < 100 && <LoadingScreen />}
+        {!loaded && <LoadingScreen />}
       </AnimatePresence>
     </main>
   );

@@ -17,9 +17,7 @@ type Props = {};
 const sphereRadius = 0.25 * 15;
 const sphereOuterRadius = 0.262 * 15;
 export default function Earth({}: Props) {
-  const percentage = useAppSelector(
-    (state: RootState) => state.load.percentage
-  );
+  const loaded = useAppSelector((state: RootState) => state.load.Loaded);
   const [diffuse, diffuse_Night, bump, specular, clouds] = useLoader(
     TextureLoader,
     [
@@ -34,7 +32,7 @@ export default function Earth({}: Props) {
   const earth2 = useRef<Mesh>(null);
   const ref = useRef<Mesh>(null);
   useEffect(() => {
-    if (earth.current && percentage >= 100) {
+    if (earth.current && loaded) {
       gsap.to(earth.current.scale, {
         x: 1,
         y: 1,
@@ -48,7 +46,7 @@ export default function Earth({}: Props) {
         ease: 'expo.out',
       });
     }
-  }, [percentage]);
+  }, [loaded]);
 
   useFrame((state, delta) => {
     if (ref.current) ref.current.rotation.y += 0.002 / 20;

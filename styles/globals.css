@@ -36,6 +36,11 @@ body {
   font-family: var(--Font-audiowide);
   font-weight: 400;
 }
+.font-Lucida {
+  font-family: var(--lucida-Italic);
+  font-weight: 400;
+  font-style: italic;
+}
 
 .title {
   /* title: 20.00px → 96.00px */

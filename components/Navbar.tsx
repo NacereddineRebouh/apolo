@@ -3,7 +3,11 @@ import React from 'react';
 import logo from '@/public/Images/White Logo.png';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useAppSelector, getPercentage } from '@/utils/Providers/store/store';
+import {
+  useAppSelector,
+  getPercentage,
+  getLoaded,
+} from '@/utils/Providers/store/store';
 type Props = {};
 export default function Navbar({}: Props) {
   // ---- Framer Motion Variants ---- //
@@ -48,10 +52,10 @@ export default function Navbar({}: Props) {
     },
     exit: {},
   };
-  const percentage = useAppSelector(getPercentage);
+  const loaded = useAppSelector(getLoaded);
   return (
     <>
-      {percentage >= 100 && (
+      {loaded && (
         <div className='headerPadding absolute top-0 w-screen bg-neutral-900 py-4 text-neutral-100'>
           <motion.div
             variants={headerParent}

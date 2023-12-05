@@ -1,11 +1,11 @@
 'use client';
 import type { Metadata } from 'next';
-import { Audiowide, Inter, Michroma } from 'next/font/google';
+import { Audiowide, Inter, Lunasima, Michroma } from 'next/font/google';
 import '@/styles/globals.css';
 import Navbar from '@/components/Navbar';
 import Providers from '@/utils/Providers/Providers';
-import { useAppSelector, getPercentage } from '@/utils/Providers/store/store';
-
+import AudioComponent from '@/components/AudioComponent';
+import { lucida } from '@/utils/Fonts';
 const michroma = Michroma({
   subsets: ['latin'],
   weight: '400',
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${aw.variable} scrollbar-thumb-rounded-full overflow-y-hidden bg-neutral-950 text-neutral-50 scrollbar-thin scrollbar-track-neutral-900 scrollbar-thumb-neutral-400 `}
+      className={`${aw.variable} ${lucida.variable} overflow-y-hidden bg-neutral-950 text-neutral-50 scrollbar-thin scrollbar-track-neutral-900 scrollbar-thumb-neutral-400 scrollbar-thumb-rounded-full `}
     >
       <head>
         {/* <!-- HTML Meta Tags --> */}
@@ -49,8 +49,11 @@ export default function RootLayout({
           sizes='16x16'
         />
       </head>
-      <body className={`${michroma.className}`}>
+
+      <body className={`relative ${michroma.className}`}>
         <Providers>
+          {/* Audio */}
+          <AudioComponent />
           <Navbar />
           {children}
         </Providers>

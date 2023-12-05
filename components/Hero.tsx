@@ -93,7 +93,7 @@ export default function Hero({}: Props) {
         initial='hidden'
         animate='visible'
         exit='exit'
-        className='font-Audiowide title px-2'
+        className='font-Lucida title px-2'
       >
         <motion.div
           variants={title1}
@@ -129,8 +129,8 @@ export default function Hero({}: Props) {
         className='body max-w-6xl px-4 text-center font-medium lg:text-start'
       >
         The 1969 moon landing, conducted by NASA&apos;s Apollo 11 mission, made
-        history as astronauts Neil strong and Buzz Aldrin became the first
-        humans to set foot on the lunar surface, a monumental chievement in
+        history as astronauts Neil Armstrong and Buzz Aldrin became the first
+        humans to set foot on the lunar surface, a monumental achievement in
         space exploration.
       </motion.p>
     </motion.div>
